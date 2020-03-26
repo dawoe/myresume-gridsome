@@ -24,8 +24,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - working-directory: './my-resume' 
-    - run: npm ci
-    - run: npm run build --if-present
+    - name : Install node
+      working-directory: './my-resume' 
+      run: npm ci
+    - name : Build gridsome
+      working-directory: './my-resume' 
+      run: npm run build --if-present
       env:
-        CI: true
+        CI: true   
+     
