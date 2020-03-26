@@ -28,8 +28,12 @@ jobs:
       working-directory: './my-resume' 
       run: npm ci
     - name : Build gridsome
-      working-directory: './my-resume' 
+      
       run: npm run build --if-present
       env:
         CI: true   
-     
+    - name: Upload dist folder as an artifact ZIP 
+      uses: actions/upload-artifact@master
+      with:
+        name: static   # Name of the ZIP
+        path: './my-resume/dist' 
