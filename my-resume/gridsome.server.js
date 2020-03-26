@@ -5,6 +5,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const Path = require('path')
+
 module.exports = function (api) {
 
   const addPersonalData = (store) => {
@@ -26,7 +28,7 @@ module.exports = function (api) {
     }
 
     store.addMetadata('personalData', data)
-
+    store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`),)
 
   }
 

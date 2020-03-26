@@ -3,7 +3,8 @@
 @tailwind components;
 
 .doc {
-    @apply flex justify-center object-center
+
+    @apply font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover
 }
 
 @tailwind utilities;
