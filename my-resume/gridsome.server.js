@@ -29,6 +29,7 @@ module.exports = function (api) {
 
     store.addMetadata('personalData', data)
     store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`),)
+    store.addMetadata('profileImage', Path.resolve(__dirname, `src/assets/me-large.jpg`),)
 
   }
 

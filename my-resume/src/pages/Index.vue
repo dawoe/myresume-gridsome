@@ -40,7 +40,8 @@
 	<!--Img Col-->
 	<div class="w-full lg:w-2/5">
 		<!-- Big profile image for side bar (desktop) -->
-		<img src="https://source.unsplash.com/MP0IUfwrn0A" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
+    <g-image :src="$static.metadata.profileImage" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block object-cover" />
+		<!-- <img src="https://source.unsplash.com/MP0IUfwrn0A" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"> -->
 		<!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
 
 	</div>
@@ -53,5 +54,14 @@ export default {
   metaInfo: {
     title: 'Hello, world!'
   }
+
 }
 </script>
+
+<static-query>
+query {
+  metadata {
+    profileImage (width : 358, height : 538)
+  }
+}
+</static-query>

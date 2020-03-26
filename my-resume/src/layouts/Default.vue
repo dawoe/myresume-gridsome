@@ -27,7 +27,6 @@
 <static-query>
 query {
   metadata {
-    siteName,
     bgImage
   }
 }
