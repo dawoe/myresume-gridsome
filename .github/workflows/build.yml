@@ -28,7 +28,7 @@ jobs:
       working-directory: './my-resume' 
       run: npm ci
     - name : Build gridsome
-      
+      working-directory: './my-resume' 
       run: npm run build --if-present
       env:
         CI: true   
