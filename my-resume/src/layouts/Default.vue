@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-w">
+  <div class="max-w-screen-xl ">
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>

@@ -2,5 +2,9 @@
 
 @tailwind components;
 
+.doc {
+    @apply flex justify-center object-center
+}
+
 @tailwind utilities;
 
