@@ -6,9 +6,11 @@ require('~/main.css')
 import DefaultLayout from '~/layouts/Default.vue'
 
 export default function (Vue, { router, head, isClient }) {
-  // Set default layout as a global component
+  head.script.push({
+    src: 'https://use.fontawesome.com/releases/v5.0.9/js/all.js'
+  })
 
-  head.bodyAttrs = { class: 'doc' }
+  head.bodyAttrs = { class: 'antialiased text-' }
 
   Vue.component('Layout', DefaultLayout)
 }

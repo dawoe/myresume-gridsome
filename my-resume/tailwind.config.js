@@ -1,6 +1,11 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        header: ["Titillium Web"],
+        body: ["Open Sans"]
+      }
+    }
   },
   variants: {},
   plugins: [],

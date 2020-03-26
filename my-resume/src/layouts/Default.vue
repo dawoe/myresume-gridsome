@@ -1,14 +1,16 @@
 <template>
-  <div :style="styles">
-    <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+  <div class="container mx-auto p-4 mt-4 font-body ">
+     <section class="mb-8">
+        <section class="text-center">
+          <h1 class="font-header font-semibold text-red-500 text-3xl md:text-5xl print:text-5xl small-caps">
+            {{fullName}}
+          </h1>
+        </section>
+      </section>
+      <div class="md:flex print:flex">
+        <slot />
+      </div>
 
-      <slot />
-
-      <!-- Pin to top right corner -->
-      <!-- <div class="absolute top-0 right-0 h-12 w-18 p-4">
-		<button class="js-change-theme focus:outline-none">🌙</button>
-      </div>-->
-    </div>
   </div>
 </template>
 
@@ -19,6 +21,9 @@
        return {
          backgroundImage : `url(${this.$static.metadata.bgImage.src})`
        }
+     },
+     fullName() {
+       return `${this.$static.metadata.personalData.firstName} ${this.$static.metadata.personalData.lastName}`
      }
    }
 }
@@ -27,6 +32,10 @@
 <static-query>
 query {
   metadata {
+    personalData  {
+      firstName,
+      lastName
+    }
     bgImage
   }
 }
