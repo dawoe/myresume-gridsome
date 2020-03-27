@@ -10,7 +10,6 @@ const Path = require('path')
 module.exports = function (api) {
 
   const addPersonalData = (store) => {
-    var personaldata = store.addCollection('PersonalData');
 
     var birthDay = new Date(1977, 1, 21)
     var ageDiffMs = Date.now() - birthDay.getTime()
@@ -19,7 +18,7 @@ module.exports = function (api) {
     var today = new Date();
     var experienceYears =  Math.abs(today.getUTCFullYear() - 2001)
 
-    var data = {
+    var personalData = {
       firstName : 'Dave',
       lastName : 'Woestenborghs',
       age,
@@ -27,16 +26,31 @@ module.exports = function (api) {
       description : `Senior Fullstack .NET developer with ${experienceYears} years experience. Specialized in Umbraco CMS implementations. Strong affinity with frontend technoligies`
     }
 
-    store.addMetadata('personalData', data)
-    store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`),)
-    store.addMetadata('profileImage', Path.resolve(__dirname, `src/assets/me-large.jpg`),)
+    store.addMetadata('personalData', personalData)
 
+  }
+
+  const addContactData = (store) => {
+    var contactData = {
+      email : 'dave.woestenborghs@gmail.com',
+      showEmail : true,
+      phone : '+32497428408',
+      showPhone : true,
+      linkedIn : 'https://www.linkedin.com/in/davewoestenborghs/',
+      twitter : 'https://twitter.com/dawoe21',
+      github : 'https://github.com/dawoe'
+    }
+
+    store.addMetadata('contactData', contactData)
   }
 
 
   api.loadSource(async store => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+    store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`),)
+    store.addMetadata('profileImage', Path.resolve(__dirname, `src/assets/me-large.jpg`),)
     addPersonalData(store);
+    addContactData(store);
   })
 
   api.createPages(({ createPage }) => {

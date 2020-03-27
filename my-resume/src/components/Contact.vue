@@ -3,23 +3,25 @@
             <h2 class="section">
               Contact
             </h2>
-            <div class="flex mt-2">
+            <div class="flex mt-2" v-if="$static.metadata.contactData.showEmail">
               <i
                 class="fas fa-envelope text-black mr-1"
                 data-fa-transform="shrink-2"
               ></i>
-              <a class="icon-text" href="mailto:oscar@tegiffel.com"
-                >oscar@tegiffel.com</a
+              <a v-if="emailVisible" class="icon-text" :href="emailLink"
+                >{{$static.metadata.contactData.email}}</a
               >
+              <a class="icon-text" href="" v-if="!emailVisible" @click="emailVisible = true">Show e-mail</a>
             </div>
-            <div class="flex mt-2">
+            <div class="flex mt-2" v-if="$static.metadata.contactData.showPhone">
               <i
                 class="fas fa-phone text-black mr-1"
                 data-fa-transform="shrink-3"
               ></i>
-              <a href="tel:0031652789990" class="icon-text"
-                >+31 6 52 78 99 90</a
+              <a v-if="phoneVisible" :href="phoneLink" class="icon-text"
+                >{{$static.metadata.contactData.phone}}</a
               >
+               <a class="icon-text" href="" v-if="!phoneVisible" @click="phoneVisible = true">Show phonenumber</a>
             </div>
 
             <div class="flex mt-2">
@@ -29,10 +31,10 @@
               ></i>
               <a
                 class="icon-text"
-                href="https://www.linkedin.com/in/otegiffel/"
+                :href="$static.metadata.contactData.linkedIn"
                 rel="noopener noreferrer"
                 target="_blank"
-                >/in/otegiffel/</a
+                >LinkedIn</a
               >
             </div>
 
@@ -43,38 +45,25 @@
               ></i>
               <a
                 class="icon-text"
-                href="https://github.com/oscarteg"
+                 :href="$static.metadata.contactData.github"
                 rel="noopener noreferrer"
                 target="_blank"
-                >github.com/oscarteg</a
+                >Github</a
               >
             </div>
 
+
             <div class="flex mt-2">
               <i
-                class="fab fa-gitlab text-black mr-1"
+                class="fab fa-twitter text-black mr-1"
                 data-fa-transform="shrink-1"
               ></i>
               <a
                 class="icon-text"
-                href="https://gitlab.com/oscarteg"
+                :href="$static.metadata.contactData.twitter"
                 rel="noopener noreferrer"
                 target="_blank"
-                >gitlab.com/oscarteg</a
-              >
-            </div>
-
-            <div class="flex mt-2">
-              <i
-                class="fas fa-globe text-black mr-1"
-                data-fa-transform="shrink-1"
-              ></i>
-              <a
-                class="icon-text"
-                href="https://oscartegiffel.com"
-                rel="noopener noreferrer"
-                target="_blank"
-                >oscartegiffel.com</a
+                >Twitter</a
               >
             </div>
           </section>
@@ -82,7 +71,36 @@
 
 <script>
     export default {
-
+        data() {
+            return {
+                emailVisible : false,
+                phoneVisible : false
+            }
+        },
+        computed : {
+            phoneLink () {
+                return `tel:${this.$static.metadata.contactData.phone}`
+            },
+            emailLink () {
+                return `mailto:${this.$static.metadata.contactData.email}`
+            }
+        }
     }
 </script>
+
+<static-query>
+query {
+  metadata {
+    contactData {
+      email,
+      showEmail,
+      phone,
+      showPhone,
+      linkedIn,
+      twitter,
+      github
+    }
+  }
+}
+</static-query>
 
