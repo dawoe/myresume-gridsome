@@ -96,13 +96,17 @@ module.exports = function (api) {
 
     var frameworks = groups.addNode({
       id: 3,
-      label: "Frameworks",
+      label: "Frameworks/Libraries",
       skills: [{
         label: 'ASP.NET',
         level: 5
       },
       {
         label: 'VueJS',
+        level: 4
+      },
+      {
+        label: 'jQuery',
         level: 4
       },
       {
@@ -116,6 +120,18 @@ module.exports = function (api) {
       {
         label: 'SQL',
         level: 4
+      },
+      {
+        label: 'TailwindCss',
+        level: 4
+      },
+      {
+        label: 'Gridsome',
+        level: 4
+      },
+      {
+        label: 'NuxtJS',
+        level: 4
       }]
     });
 
@@ -128,6 +144,27 @@ module.exports = function (api) {
       },
       {
         label: 'Sitecore',
+        level: 3
+      }]
+    });
+
+    var tools = groups.addNode({
+      id: 5,
+      label: "Other tools",
+      skills: [{
+        label: 'Gulp',
+        level: 4
+      },
+      {
+        label: 'Webpack',
+        level: 3
+      },
+      {
+        label: 'NodeJs',
+        level: 3
+      },
+      {
+        label: 'Grunt',
         level: 3
       }]
     });

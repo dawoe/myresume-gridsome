@@ -3,65 +3,56 @@
             <h2 class="section">
               Skills
             </h2>
-            <div class="flex mt-2">
-              <div class="w-1/2 mr-1">
-                <p class="font-bold">
-                  Languages:
-                </p>
-                <p class="mt-1">
-                  Dutch, English
-                </p>
-              </div>
-              <div class="w-1/2 mr-1">
-                <p class="font-bold">
-                  Programming languages:
-                </p>
-                <p class="mt-1">
-                  PHP, JavaScript, TypeScript, Python (Django),
-                  Go&nbsp;(beginner), MYSQL, (S)CSS, HTML, Java,
-                  Android&nbsp;(beginner), NodeJS
-                </p>
-              </div>
+             <div class="flex mt-2" v-for="(group,$groupindex) in groupedSkills" :key="$groupindex">
+                <div class="w-1/2 mr-2" v-for="(skill) in group" :key="skill.node.id">
+                  <p class="font-bold">
+                    {{skill.node.label}}:
+                  </p>
+                  <div class="flex" v-for="item in skill.node.skills" :key="item.label">
+                      <label class="w-1/2">{{item.label}}</label>
+                      <meter  class="w-1/2"  :value="item.level" min="0" max="5">{{item.level}} out of 5</meter>
+                  </div>
+                </div>
             </div>
-            <div class="flex mt-2">
-              <div class="w-1/2 mr-1">
-                <p class="font-bold">
-                  Frameworks:
-                </p>
-                <p class="mt-1">
-                  Laravel, Vue.js (NuxtJS), Svelte, React (GatsbyJS, NextJS),
-                  React Native, Express, Storybook
-                </p>
-              </div>
-              <div class="w-1/2 ml-1">
-                <p class="font-bold">
-                  Tools & services:
-                </p>
-                <p class="mt-1">
-                  Git, Docker, Linux, Vagrant, Ansible, MySQL, Postgresql,
-                  Webpack, CI/CD, Graphql
-                </p>
-              </div>
-            </div>
-            <div class="flex mt-2">
-              <div class="w-1/2 ml-1">
-                <p class="font-bold">
-                  Libraries:
-                </p>
-                <p class="mt-1">
-                  Bootstrap, TailwindCSS, Bulma, Ant Design
-                </p>
-              </div>
-            </div>
+
           </section>
 </template>
 
 <script>
     export default {
+      computed : {
+        groupedSkills() {
+          let index = 0
+          const arrayLength =  this.$static.skills.edges.length
 
+          let tempArray = [];
+
+          for(index = 0; index< arrayLength; index +=2){
+            let myChunk = this.$static.skills.edges.slice(index, index+2)
+
+            tempArray.push(myChunk)
+          }
+
+          return tempArray
+
+        }
+      }
     }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<static-query>
+query {
+ skills :  allSkillsGroup(sortBy : "id", order :ASC) {
+  edges {
+    node {
+      id,
+      label,
+      skills {
+        label,
+        level
+      }
+    }
+  }
+}
+}
+</static-query>
