@@ -16,14 +16,14 @@ module.exports = function (api) {
     var ageDate = new Date(ageDiffMs)
     var age = Math.abs(ageDate.getUTCFullYear() - 1970);
     var today = new Date();
-    var experienceYears =  Math.abs(today.getUTCFullYear() - 2001)
+    var experienceYears = Math.abs(today.getUTCFullYear() - 2001)
 
     var personalData = {
-      firstName : 'Dave',
-      lastName : 'Woestenborghs',
+      firstName: 'Dave',
+      lastName: 'Woestenborghs',
       age,
-      title : 'Senior Fullstack .NET developer',
-      description : `Senior Fullstack .NET developer with ${experienceYears} years experience. Specialized in Umbraco CMS implementations. Strong affinity with frontend technoligies`
+      title: 'Senior Fullstack .NET developer',
+      description: `Senior Fullstack .NET developer with ${experienceYears} years experience. Specialized in Umbraco CMS implementations. Strong affinity with frontend technoligies`
     }
 
     store.addMetadata('personalData', personalData)
@@ -32,25 +32,115 @@ module.exports = function (api) {
 
   const addContactData = (store) => {
     var contactData = {
-      email : 'dave.woestenborghs@gmail.com',
-      showEmail : true,
-      phone : '+32497428408',
-      showPhone : true,
-      linkedIn : 'https://www.linkedin.com/in/davewoestenborghs/',
-      twitter : 'https://twitter.com/dawoe21',
-      github : 'https://github.com/dawoe'
+      email: 'dave.woestenborghs@gmail.com',
+      showEmail: true,
+      phone: '+32497428408',
+      showPhone: true,
+      linkedIn: 'https://www.linkedin.com/in/davewoestenborghs/',
+      twitter: 'https://twitter.com/dawoe21',
+      github: 'https://github.com/dawoe'
     }
 
     store.addMetadata('contactData', contactData)
   }
 
+  const addSkills = (store) => {
+    var groups = store.addCollection("SkillsGroup");
+
+
+    var language = groups.addNode({
+      id: 1,
+      label: "Languages",
+      skills: [{
+        label: 'Dutch',
+        level: 5
+      },
+      {
+        label: 'English',
+        level: 5
+      },
+      {
+        label: 'French',
+        level: 3
+      },
+      {
+        label: 'German',
+        level: 2
+      }]
+    });
+
+    var proglanguage = groups.addNode({
+      id: 2,
+      label: "Programming Languages",
+      skills: [{
+        label: 'C#',
+        level: 5
+      },
+      {
+        label: 'Javascript',
+        level: 5
+      },
+      {
+        label: 'HTML',
+        level: 5
+      },
+      {
+        label: '(S)CSS',
+        level: 4
+      },
+      {
+        label: 'SQL',
+        level: 4
+      }]
+    });
+
+    var frameworks = groups.addNode({
+      id: 3,
+      label: "Frameworks",
+      skills: [{
+        label: 'ASP.NET',
+        level: 5
+      },
+      {
+        label: 'VueJS',
+        level: 4
+      },
+      {
+        label: 'ReactJS',
+        level: 4
+      },
+      {
+        label: 'AngularJS',
+        level: 4
+      },
+      {
+        label: 'SQL',
+        level: 4
+      }]
+    });
+
+    var cms = groups.addNode({
+      id: 4,
+      label: "Content Management Systems",
+      skills: [{
+        label: 'Umbraco',
+        level: 5
+      },
+      {
+        label: 'Sitecore',
+        level: 3
+      }]
+    });
+  }
+
 
   api.loadSource(async store => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`),)
-    store.addMetadata('profileImage', Path.resolve(__dirname, `src/assets/me-large.jpg`),)
+    store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`))
+    store.addMetadata('profileImage', Path.resolve(__dirname, `src/assets/me-large.jpg`))
     addPersonalData(store);
     addContactData(store);
+    addSkills(store);
   })
 
   api.createPages(({ createPage }) => {
