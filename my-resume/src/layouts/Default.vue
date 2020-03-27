@@ -5,6 +5,7 @@
           <h1 class="font-header font-semibold text-red-500 text-3xl md:text-5xl print:text-5xl small-caps">
             {{fullName}}
           </h1>
+          <p class="text-xl">{{$static.metadata.personalData.title}}</p>
         </section>
       </section>
       <div class="md:flex print:flex">
@@ -34,7 +35,8 @@ query {
   metadata {
     personalData  {
       firstName,
-      lastName
+      lastName,
+      title
     }
     bgImage
   }
