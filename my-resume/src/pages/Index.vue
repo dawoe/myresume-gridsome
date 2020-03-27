@@ -23,8 +23,10 @@ import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 
 export default {
-  metaInfo: {
-    title: "Hello, world!"
+  metaInfo()  {
+    return {
+      titleTemplate: `${this.$static.metadata.personalData.firstName} ${this.$static.metadata.personalData.lastName} - ${this.$static.metadata.personalData.title}`
+    }
   },
   components: {
     Profile,
@@ -37,3 +39,15 @@ export default {
 };
 </script>
 
+<static-query>
+query {
+  metadata {
+    personalData  {
+      firstName,
+      lastName,
+      title
+    }
+    bgImage
+  }
+}
+</static-query>
