@@ -3,12 +3,13 @@
     <div class="md:w-1/3 print:w-1/3">
       <Profile />
       <Contact />
-      <Skills />
-      <Education />
+
+      <!-- <Education /> -->
     </div>
     <div class="border-gray-700 border-t pt-4 md:right-column print:right-column">
       <Experience />
-      <Projects />
+       <Skills />
+      <!-- <Projects /> -->
     </div>
 
   </Layout>
