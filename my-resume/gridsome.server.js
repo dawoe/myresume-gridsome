@@ -170,6 +170,36 @@ module.exports = function (api) {
     });
   }
 
+  const addExperiences = (store) => {
+    var experience = store.addCollection("Experiences");
+
+    experience.addNode({
+      id : 1,
+      period : "September 2000 - July 2007",
+      role : "Consultant",
+      description : "Full stack web developer. Responsible for various web projects and the development of the inhouse CMS \"Web Vision\"",
+      company : "IT Omni",
+      location : "Herk-de-Stad(B)"
+    })
+
+    experience.addNode({
+      id : 2,
+      period : "July 2000 - January 2020",
+      role : "Senior ASP.NET Developer",
+      description : "Full stack .net developer. Lead developer on Umbraco CMS projects",
+      company : "We Are You",
+      location : "'s-Hertogenbosch (NL)"
+    })
+
+    experience.addNode({
+      id : 3,
+      period : "February 2020 - March 2020",
+      role : "Senior ASP.NET Developer",
+      description : "Senior Developer on various sitecore and Umbraco cms projects",
+      company : "Conclusion Zuyd",
+      location : "Heerlen"
+    })
+  }
 
   api.loadSource(async store => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
@@ -178,6 +208,7 @@ module.exports = function (api) {
     addPersonalData(store);
     addContactData(store);
     addSkills(store);
+    addExperiences(store);
   })
 
   api.createPages(({ createPage }) => {
