@@ -11,7 +11,6 @@
       <Projects />
     </div>
 
-    <!-- <g-image :src="$static.metadata.profileImage" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block object-cover" /> -->
   </Layout>
 </template>
 
@@ -38,10 +37,3 @@ export default {
 };
 </script>
 
-<static-query>
-query {
-  metadata {
-    profileImage (width : 358, height : 538)
-  }
-}
-</static-query>

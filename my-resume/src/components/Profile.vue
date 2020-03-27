@@ -1,6 +1,6 @@
 <template>
   <section class="pb-4 md:pr-4 print:pr-4">
-    <h2 class="section">Profiel</h2>
+    <h2 class="section">Profile</h2>
     <p class="paragraph">
       Oscar is a social and driven software developer. His father has
       involved him in the computer from an early age and through proper
@@ -18,9 +18,18 @@
       (innovative) product or service with real added value to the
       largest possible audience.
     </p>
+    <g-image :src="$static.metadata.profileImage" class="mx-auto rounded-none lg:rounded-lg shadow-2xl  object-cover" />
   </section>
 </template>
 
 <script>
 export default {};
 </script>
+
+<static-query>
+query {
+  metadata {
+    profileImage (width : 358, height : 538)
+  }
+}
+</static-query>
