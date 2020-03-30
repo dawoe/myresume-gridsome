@@ -40,7 +40,7 @@ jobs:
     - name: Publish generated content to GitHub Pages
       uses: tsunematsu21/actions-publish-gh-pages@v1.0.0
       with:
-          dir: './my-resume/dist' 
-          repo: dawoe/dawoe.github.io
-          branch: master
-          token: ${{ secrets.ACCESS_TOKEN }}
+        dir: './my-resume/dist' 
+        repo: dawoe/dawoe.github.io
+        branch: master
+        token: ${{ secrets.ACCESS_TOKEN }}
