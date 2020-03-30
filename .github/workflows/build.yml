@@ -35,7 +35,7 @@ jobs:
         name: static   # Name of the ZIP
         path: './my-resume/dist' 
     - name: Publish generated content to GitHub Pages
-      uses: tsunematsu21/actions-publish-gh-pages@v1.0.0
+      uses: tsunematsu21/actions-publish-gh-pages@v0.2.0
       with:
         dir: './my-resume/dist' 
         repo: dawoe/dawoe.github.io
