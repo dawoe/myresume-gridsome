@@ -4,7 +4,7 @@
       <section class="mb-8">
         <section class="text-center">
           <h1
-            class="font-header font-semibold text-red-500 text-3xl md:text-5xl print:text-5xl small-caps"
+            class="font-header font-semibold text-blue-500 text-3xl md:text-5xl print:text-5xl small-caps"
           >{{fullName}}</h1>
           <p class="text-xl">{{$static.metadata.personalData.title}}</p>
         </section>
