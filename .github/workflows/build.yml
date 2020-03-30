@@ -14,16 +14,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}     
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - name: Use Node.js  
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '12.x'
     - name : Install node
       working-directory: './my-resume' 
       run: npm ci
@@ -37,3 +34,10 @@ jobs:
       with:
         name: static   # Name of the ZIP
         path: './my-resume/dist' 
+    - name: Publish generated content to GitHub Pages
+      uses: tsunematsu21/actions-publish-gh-pages@v0.2.0
+      with:
+        dir: './my-resume/dist' 
+        repo: dawoe/dawoe.github.io
+        branch: master
+        token: ${{ secrets.ACCESS_TOKEN }}
