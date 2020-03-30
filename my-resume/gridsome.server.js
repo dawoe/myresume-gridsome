@@ -247,6 +247,60 @@ module.exports = function (api) {
       ],
       skills : ['ASP.NET', 'SQL Server', 'Azure', 'Reddis Cache', 'Ziggeo Video Integration', 'jQuery', 'Umbraco CMS', 'LiveWords integration', 'Adyen integration']
     })
+
+    projects.addNode({
+      id:2,
+      sortOrder : 5,
+      name : 'Oypo',
+      url : 'https://www.oypo.nl',
+      role : 'Lead developer',
+      description : "Oypo is a platform where photographers can upload photos and sell photo products"
+                     + 'The platform is build so the photographer is in full control, from which products to sell, at which price and discounts.'
+                     + 'This was a rebuild from a classic ASP website to ASP.NET backed by a CMS to manage the content. The backend for photographers was built in ReactJS'
+                     + 'Over 25000 photographers have uploaded over 80 million photos',
+      keyPoints : [
+        'Umbraco CMS is used to manage content',
+        'ReactJS is used to build the backend for photographers and the product catalog and shopping basket',
+        "Complex price ruling (per photographer)"
+      ],
+      skills : ['ASP.NET', 'SQL Server', 'jQuery', 'Umbraco CMS', 'ReactJs', 'Flux', 'React SSR', 'NHibernate', 'MultisafePay']
+    })
+
+    projects.addNode({
+      id:3,
+      sortOrder : 1,
+      name : 'Vesteda',
+      url : '',
+      role : 'Lead developer',
+      description : " Vesteda is a Dutch residential investor that mainly focuses on the mid-rental segment."
+                     + 'Their current website dates from 2004 and not up to date with present technologies. '
+                     + 'The goal was rebuilding the website, making it repsonsive and future proof.'
+                     + 'At the moment the website is waiting to go live',
+      keyPoints : [
+        'Umbraco CMS is used to manage content',
+        'VueJs is used for the houses and appartment search',
+        "Data for houses and appartments is imported in to the CMS database and served as virtual pages"
+      ],
+      skills : ['ASP.NET', 'SQL Server', 'VueJs', 'Umbraco CMS', 'Lucene', 'Spatial Search']
+    })
+
+    projects.addNode({
+      id:4,
+      sortOrder : 2,
+      name : 'IXXI ',
+      url : 'https://www.ixxiyourworld.com/',
+      role : 'Lead developer',
+      description : " With IXXI, you can easily create your own personal wall decoration in any size you want. This high-quality product consists of cards and connectors, offering endless possibilities in image, shape and size."
+                     + 'We built the website where users can create a IXXI with their own pictures (upload, facebook, instagram, ...) or order a predefined ixxi',
+      keyPoints : [
+        'Umbraco CMS is used to manage content',
+        'Teacommerce is used for handling orders',
+        "Azure search is used to store product information managed in the CMS",
+        'Buckaroo is used for handling payments',
+        'iTextSharp is used for generating high resolution PDF files for the printing company'
+      ],
+      skills : ['ASP.NET', 'SQL Server', 'jQuery', 'Umbraco CMS', 'Azure Search', 'Buckaroo', 'Facebook', 'Instagram', 'iTextSharp', 'Teacommerce']
+    })
   }
 
   api.loadSource(async store => {
