@@ -23,7 +23,8 @@ module.exports = function (api) {
       lastName: 'Woestenborghs',
       age,
       title: 'Senior Fullstack .NET developer',
-      description: `Senior Fullstack .NET developer with over ${experienceYears} years experience.  Strong affinity with frontend technology.`
+      description: `I am senior Fullstack .NET developer with over ${experienceYears} years experience. Although my main focus is on backend coding, I also have a strong affinity with frontend technology.`
+            +  `<br><br> I'm a result driven, with a great attention for quality and performance.`
             +  `<br><br> In my career I worked with a broad range of content management systems, but the last couple of years I specialized myself in Umbraco CMS`
             +  `<br>Because of my active presence in the community and Umbraco core contributions I got awarded with 4 consecutive MVP awards from 2016 to 2019.`
     }
