@@ -94,6 +94,10 @@ module.exports = function (api) {
       {
         label: 'SQL',
         level: 4
+      },
+      {
+        label: 'Regular Expressions',
+        level: 3
       }]
     });
 
@@ -148,6 +152,18 @@ module.exports = function (api) {
       {
         label: 'Sitecore',
         level: 3
+      },
+      {
+        label: 'Smartsite',
+        level: 3
+      },
+      {
+        label: 'Alterian CMS (Mediasurface Morello)',
+        level: 2
+      },
+      {
+        label: 'Dot Net Nuke',
+        level: 2
       }]
     });
 
