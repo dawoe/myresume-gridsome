@@ -9,7 +9,7 @@
     <div class="border-gray-700 border-t pt-4 md:right-column print:right-column">
       <Experience />
        <Skills />
-      <!-- <Projects /> -->
+      <Projects title="Projects" :projects="$static.projects.edges" />
     </div>
 
   </Layout>
@@ -49,6 +49,19 @@ query {
       title
     }
     bgImage
+  },
+  projects : allProjects(sortBy : "sortOrder", order :ASC) {
+  edges {
+    node {
+      id,
+      name,
+      url,
+      description,
+      skills,
+      keyPoints,
+      role
+      }
+    }
   }
 }
 </static-query>

@@ -201,6 +201,27 @@ module.exports = function (api) {
     })
   }
 
+  const addProjects = (store) => {
+    var projects = store.addCollection("Projects");
+
+    projects.addNode({
+      id:1,
+      sortOrder : 10,
+      name : 'New Heroes',
+      url : 'https://www.newheroes.com',
+      role : 'Lead developer',
+      description : 'New Heroes is a online learning platform with more than 130 online courses including time management, leadership, and assertiveness. '
+                     + 'This online learing platform built on top of the Umbraco CMS allows people to start a subscription to get access to the full course catalog. '
+                     + ' The course progress is tracked for each user so they can pick up where they left off.',
+      keyPoints : [
+        'Hosted on Azure Web Apps, configured for autoscaling to handle large amounts of traffic',
+        'Integration Adyen payment provider to handle creating and renewals of subscriptions',
+        "Integration of Ziggeo Video platform for hosting course video's. Also video's recorded by users on the platform are stored in Ziggeo"
+      ],
+      skills : ['ASP.NET', 'SQL Server', 'Azure', 'Reddis Cache', 'Ziggeo Video Integration', 'jQuery', 'Umbraco CMS', 'LiveWords integration', 'Adyen integration']
+    })
+  }
+
   api.loadSource(async store => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
     store.addMetadata('bgImage', Path.resolve(__dirname, `src/assets/background.jpg`))
@@ -209,6 +230,7 @@ module.exports = function (api) {
     addContactData(store);
     addSkills(store);
     addExperiences(store);
+    addProjects(store);
   })
 
   api.createPages(({ createPage }) => {
