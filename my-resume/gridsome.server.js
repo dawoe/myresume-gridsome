@@ -211,7 +211,7 @@ module.exports = function (api) {
 
     experience.addNode({
       id : 2,
-      period : "July 2000 - January 2020",
+      period : "July 2007 - January 2020",
       role : "Senior ASP.NET Developer",
       description : "Full stack .net developer. Lead developer on Umbraco CMS projects",
       company : "We Are You",
