@@ -139,6 +139,10 @@ module.exports = function (api) {
       {
         label: 'NuxtJS',
         level: 4
+      },     
+      {
+        label: 'Typescript',
+        level: 3
       }]
     });
 
@@ -224,6 +228,15 @@ module.exports = function (api) {
       role : "Senior ASP.NET Developer",
       description : "Senior Developer on various sitecore and Umbraco cms projects",
       company : "Conclusion Zuyd",
+      location : "Heerlen"
+    })
+    
+     experience.addNode({
+      id : 4,
+      period : "May 2020 - Present",
+      role : "Senior ASP.NET Developer",
+      description : "Senior Developer on various projects",
+      company : "Mediaan",
       location : "Heerlen"
     })
   }
