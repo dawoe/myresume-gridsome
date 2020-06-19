@@ -26,7 +26,7 @@ module.exports = function (api) {
       description: `I am senior Fullstack .NET developer with over ${experienceYears} years experience. Although my main focus is on backend coding, I also have a strong affinity with frontend technology.`
             +  `<br><br> I'm a result driven, with a great attention for quality and performance. A big fan of the solid principles and software design patterns.`
             +  `<br><br> In my career I worked with a broad range of content management systems, but the last couple of years I specialized myself in Umbraco CMS`
-            +  `<br>Because of my active presence in the community and Umbraco core contributions I got awarded with 4 consecutive MVP awards from 2016 to 2019.`
+            +  `<br>Because of my active presence in the community and Umbraco core contributions I got awarded with 5 consecutive MVP awards from 2016 to 2019.`
     }
 
     store.addMetadata('personalData', personalData)
@@ -233,7 +233,7 @@ module.exports = function (api) {
     
      experience.addNode({
       id : 4,
-      period : "May 2020 - Present",
+      period : "May 2020 - June 2020",
       role : "Senior ASP.NET Developer",
       description : "Senior Developer on various projects",
       company : "Mediaan",
