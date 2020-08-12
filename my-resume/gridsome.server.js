@@ -239,6 +239,15 @@ module.exports = function (api) {
       company : "Mediaan",
       location : "Heerlen"
     })
+    
+    experience.addNode({
+      id : 5,
+      period : "August 2020 - Present",
+      role : "Lead Developer",
+      description : "Lead Developer on various Umbraco projects",
+      company : "Nexwork",
+      location : "Maastricht"
+    })
   }
 
   const addProjects = (store) => {
