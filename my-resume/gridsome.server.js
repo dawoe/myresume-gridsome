@@ -242,11 +242,20 @@ module.exports = function (api) {
     
     experience.addNode({
       id : 5,
-      period : "August 2020 - Present",
+      period : "August 2020 - February 2021",
       role : "Lead Developer",
       description : "Lead Developer on various Umbraco projects",
       company : "Nexwork",
       location : "Maastricht"
+    })
+    
+    experience.addNode({
+      id : 6,
+      period : "March 2021 - Present",
+      role : "Lead Developer",
+      description : "Lead Umbraco developer",
+      company : "dotControl",
+      location : "Heerlen"
     })
   }
 
